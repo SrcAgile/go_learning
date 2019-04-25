@@ -32,6 +32,6 @@ func sayHelloWorld(p programmer) {
 func TestInterface(t *testing.T) {
 	goer := goProgrammer{}
 	javer := javaProgrammer{}
-	sayHelloWorld(goer)
-	sayHelloWorld(javer)
+	sayHelloWorld(&goer)
+	sayHelloWorld(&javer)
 }
