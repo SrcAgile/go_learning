@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+//switch v:= in.type
 func DoSomething(in interface{}) {
 	switch v := in.(type) {
 	case int:
