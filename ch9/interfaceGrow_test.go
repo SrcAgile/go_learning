@@ -1,4 +1,4 @@
-package interface_prac_1
+package interPracPackage
 
 import (
 	"fmt"
@@ -26,6 +26,7 @@ func (jaer *javaProgrammer) writeHelloWorld() code {
 }
 
 func sayHelloWorld(p programmer) {
+	fmt.Printf("the type is %T\n", p)
 	fmt.Println(p.writeHelloWorld())
 }
 
