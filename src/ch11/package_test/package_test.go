@@ -1,7 +1,9 @@
 package testpkg
 
 import "testing"
-import "ch11/pkg1"
+import packageName "ch11/pkg1"
+
+//不用管里面的包叫什么名字，直接就能换成新名字
 
 //the import "ch11/pkg1" command means finding package in the file which belong
 //to this direcotory
@@ -9,5 +11,5 @@ import "ch11/pkg1"
 //而且同一目录下只能存在一个package，ch11/pkg1下的所有go文件中的package要一致
 
 func TestPkg(t *testing.T) {
-	news.Spreading()
+	packageName.Spreading()
 }
