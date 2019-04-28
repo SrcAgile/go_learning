@@ -1,6 +1,7 @@
 package channel_test
 
 import (
+	"errors"
 	"fmt"
 	"testing"
 	"time"
@@ -32,5 +33,11 @@ func otherTask() {
 func TestChannel(t *testing.T) {
 	channel := AsyncMyservice()
 	otherTask()
-	fmt.Println(<-channel)
+	//fmt.Println(<-channel)
+	select {
+	case ret := <-channel:
+		fmt.Println(ret)
+	case <-time.After(time.Millisecond * 200):
+		t.Error(errors.New("time out"))
+	}
 }
