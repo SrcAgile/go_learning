@@ -21,6 +21,6 @@ func TestCoroutine(t *testing.T) {
 		}()
 
 	}
-
+	//防止主线程提前退出
 	time.Sleep(1 * time.Second)
 }
